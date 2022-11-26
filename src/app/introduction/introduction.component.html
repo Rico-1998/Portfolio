@@ -1,7 +1,18 @@
-<div>
-    <div class="profilePic">
-        <img src="">
-    </div>
-
-
+<div class="grayedBackground" [ngStyle]="{'top.px': 100}"></div>
+<div class="presentationBox">
+    <ngx-typed-js [typeSpeed]="125" [startDelay]="1000" [backSpeed]="80" [backDelay]="2000" [contentType]="'html'"
+        [strings]="['Frontend Developer.']" [loop]="true">
+        <h1>Hello, I am <span class="jobName"> Rico Denkewitz</span></h1>
+        <span class="typing jobName"></span>
+    </ngx-typed-js>
 </div>
+<div class="grayedBackground" [ngStyle]="{'top': 'calc(100vh - 100px)'}">
+    <div class="container">
+        <a href="#aboutme">
+            <span>View work</span>
+        </a>
+    </div>
+</div>
+
+
+<!-- Image by <a href="https://www.freepik.com/free-vector/gradient-network-connection-background_12643219.htm#query=it%20background&position=29&from_view=keyword">Freepik</a> -->

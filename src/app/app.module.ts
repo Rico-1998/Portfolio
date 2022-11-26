@@ -5,16 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxTypedJsModule } from 'ngx-typed-js';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    AboutMeComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgxTypedJsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

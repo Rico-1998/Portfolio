@@ -1,0 +1,61 @@
+canvas {
+    position: absolute;
+    z-index: -1;
+    height: auto;
+}
+
+.profileContainer {
+    padding: 200px 7% 100px 7%;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        letter-spacing: 1px;
+        font-size: 50px;
+        color: white;
+    }
+
+}
+
+.mainBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle {
+    border: 6px solid #930f50;
+    border-radius: 100%;
+    display: flex;
+    background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
+    filter: drop-shadow(2px 4px 20px #930f50);
+
+    img {
+        color: rgb(118, 103, 103);
+        width: 400px;
+        height: 400px;
+        object-fit: contain;
+        border-radius: 100%;
+    }
+}
+
+.descriptionContainer {
+    min-width: 250px;
+    max-width: 600px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
+        color: rgba($color: #930f50, $alpha: 1.0);
+    }
+}
+
+.description {
+
+
+    span {
+        line-height: 25px;
+    }
+}

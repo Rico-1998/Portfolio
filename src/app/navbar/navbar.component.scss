@@ -1,19 +1,29 @@
 nav {
-    background-color: #141D2F;
-    height: 110px;
-    color: white;
+    height: 100px;
+    width: 100%;
+    color: rgba($color: #ffffff, $alpha: 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 7%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    font-size: 21px;
+    font-size: 23px;
+    box-shadow: 5px 5px 15px 5px #930f50;
+    background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
+    z-index: 3;
 
 
     a {
-        color: white;
+        color: rgba($color: #ffffff, $alpha: 0.7);
         text-decoration: none;
         padding-right: 20px;
+
+        &:hover {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: 225ms ease-in-out;
+        }
     }
 }

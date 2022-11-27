@@ -1,0 +1,77 @@
+.projectContainer {
+    height: 100vh;
+    color: white;
+    padding: 100px 7% 100px 7%;
+
+
+    .headline {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        h2 {
+            font-size: 50px;
+        }
+
+        span {
+            font-size: 23px;
+        }
+    }
+
+    .projectBox {
+        display: flex;
+        align-items: center;
+        margin-top: 125px;
+        min-width: 700px;
+        max-width: 850px;
+        position: absolute;
+        right: 7%;
+
+        img {
+            height: 385px;
+            // height: 400px;
+            max-width: 450px;
+            padding-left: 3px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .projectDescription {
+            padding: 0 50px;
+            font-size: 18px;
+        }
+    }
+}
+
+.box {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    height: 50vmin;
+    background-image: conic-gradient(from var(--border-angle),
+            #213,
+            #112 50%,
+            #213),
+        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 5s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

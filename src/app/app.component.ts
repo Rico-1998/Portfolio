@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare function animate(): any;
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
   title = 'Portfolio';
 
   ngOnInit() {
-    animate();
+    AOS.init();
   }
-
 }

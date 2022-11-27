@@ -281,8 +281,8 @@ function animate() {
         var app = new Build();
         app.run();
     })();
-    window.addEventListener('resize', function () {
-        canvas.width = w = window.innerWidth;
-        canvas.height = h = window.innerHeight;
-    }, false)
+    // window.addEventListener('resize', function () {
+    //     this.canvas.width = window.innerWidth;
+    //     this.canvas.height = window.innerHeight;
+    // }, false)
 };

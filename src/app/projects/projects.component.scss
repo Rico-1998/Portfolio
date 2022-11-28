@@ -18,20 +18,26 @@
         }
     }
 
+    .projectList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .projectBox {
         display: flex;
         align-items: center;
         margin-top: 125px;
         min-width: 700px;
         max-width: 850px;
-        position: absolute;
-        right: 7%;
 
         img {
             height: 385px;
             // height: 400px;
-            max-width: 450px;
+            max-width: 425px;
             padding-left: 3px;
+            padding-right: 3px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -43,21 +49,18 @@
     }
 }
 
+
 .box {
     --border-size: 3px;
     --border-angle: 0turn;
     height: 50vmin;
-    background-image: conic-gradient(from var(--border-angle),
-            #213,
-            #112 50%,
-            #213),
-        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-image: conic-gradient(from var(--border-angle), #213, #0000001f 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
     background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
         cover;
     background-position: center center;
     background-repeat: no-repeat;
 
-    animation: bg-spin 5s linear infinite;
+    animation: bg-spin 15s linear infinite;
 
     @keyframes bg-spin {
         to {

@@ -1,0 +1,13 @@
+<div class="contactContainer">
+    <div class="headlineDescription">
+        <h2>Contact me</h2>
+        <span>Get in touch via the form below, or by emailing rico.dg40@gmail.com</span>
+    </div>
+
+    <form (submit)="sendMail()" #myForm ngNativeValidate class="contactForm">
+        <input required type="text" name="name" #nameField>
+        <!-- <input required type="email" name="email" #nameField> -->
+        <input required type="text" name="message" #messageField>
+        <button #sendBtn>Send</button>
+    </form>
+</div>

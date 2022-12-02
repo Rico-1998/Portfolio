@@ -1,6 +1,6 @@
 .profileContainer {
     height: 100vh;
-    padding: 100px 7% 100px 7%;
+    padding: 100px 10% 100px 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,12 +11,21 @@
         color: white;
     }
 
+    @media(max-width: 1185px) {
+        height: unset;
+        // padding: 100px 7% 0 7%;
+    }
+
 }
 
 .mainBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: 1185px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .circle {
@@ -33,6 +42,21 @@
         object-fit: contain;
         border-radius: 100%;
     }
+
+    @media(max-width: 450px) {
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    @media(max-width: 325px) {
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
 }
 
 .descriptionContainer {
@@ -47,12 +71,28 @@
         margin-bottom: 50px;
         color: rgba($color: #930f50, $alpha: 1.0);
     }
+
+    @media(max-width:1185px) {
+        margin-top: 50px;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    @media(max-width:400px) {
+        h1 {
+            font-size: 40px;
+        }
+    }
 }
 
 .description {
-
-
     span {
         line-height: 25px;
+    }
+
+    @media(max-width:400px) {
+        font-size: 16px;
     }
 }

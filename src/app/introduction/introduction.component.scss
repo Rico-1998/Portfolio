@@ -1,7 +1,7 @@
 .presentationBox {
     height: 100vh;
     width: 100vw;
-    background-image: url(/assets/img/cyber-background.jpg);
+    background-image: url("../../assets/img/cyber-background.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -15,11 +15,33 @@
         font-size: 50px;
         margin-bottom: 30px;
     }
+
+    @media(max-width: 600px) {
+
+        h1 {
+            font-size: 35px;
+        }
+    }
+
+
+    @media(max-width: 425px) {
+        h1 {
+            font-size: 25px;
+        }
+    }
 }
 
 .jobName {
     font-size: 50px;
     color: #930f50;
+
+    @media(max-width: 600px) {
+        font-size: 35px;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 25px;
+    }
 }
 
 .grayedBackground {

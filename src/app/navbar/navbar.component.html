@@ -1,12 +1,23 @@
 <nav>
-    <div>
-        <span>Rico</span>
+    <div class="logo">
+        <img src="/assets/img/rico-logo.png">
     </div>
 
-    <div>
+    <div class="links">
         <a href="#">Home</a>
         <a href="#aboutme">About me</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div (click)="showMenu()" class="menu hide">
+        <mat-icon aria-hidden="false" fontIcon="menu"></mat-icon>
+    </div>
+
+    <div *ngIf="open" class="responsiveMenu">
+        <a href="#">Home</a>
+        <a href="#aboutme">About me</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>

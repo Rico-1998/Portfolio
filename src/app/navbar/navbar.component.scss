@@ -5,13 +5,48 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 7%;
+    padding: 0 10%;
     position: fixed;
     top: 0;
     font-size: 23px;
     box-shadow: 5px 5px 15px 5px #930f50;
     background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
     z-index: 3;
+
+    .logo {
+        img {
+            height: 50px;
+            filter: invert(1);
+        }
+    }
+
+    .menu {
+        cursor: pointer;
+        display: none;
+
+        @media(max-width: 700px) {
+            display: block;
+        }
+    }
+
+    .responsiveMenu {
+        display: none;
+
+        @media(max-width: 700px) {
+            color: white;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            top: 75px;
+            gap: 20px;
+            background-color: rgba($color: rgba(147, 15, 80), $alpha: 0.5);
+            height: fit-content;
+            padding: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
 
 
     a {
@@ -26,4 +61,15 @@ nav {
             transition: 225ms ease-in-out;
         }
     }
+
+    @media(max-width: 700px) {
+        .links {
+            display: none;
+        }
+    }
+}
+
+.active {
+    text-decoration: underline !important;
+    color: #930f50 !important;
 }

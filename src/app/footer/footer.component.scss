@@ -1,0 +1,28 @@
+.footerContainer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .linkBox {
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            height: 50px;
+            width: 50px;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

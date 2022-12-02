@@ -1,13 +1,28 @@
-<div class="contactContainer">
+<div class="contactContainer" id="contact">
     <div class="headlineDescription">
         <h2>Contact me</h2>
-        <span>Get in touch via the form below, or by emailing rico.dg40@gmail.com</span>
+        <span>Get in touch via the form below, or by emailing <a
+                href="mailto: rico.dg40@gmail.com">rico.dg40@gmail.com</a> </span>
     </div>
 
-    <form (submit)="sendMail()" #myForm ngNativeValidate class="contactForm">
-        <input required type="text" name="name" #nameField>
-        <!-- <input required type="email" name="email" #nameField> -->
-        <input required type="text" name="message" #messageField>
-        <button #sendBtn>Send</button>
+    <form (submit)="sendMail()" #myForm ngNativeValidate class="contactForm" data-aos="fade-up-right"
+        data-aos-duration="1000">
+        <div class="inputBox">
+            <span class="field">Name</span>
+            <input required type="text" name="name" #nameField placeholder="Enter your name">
+        </div>
+        <div class="inputBox">
+            <span class="field">Email</span>
+            <input required type="email" name="email" #nameField placeholder="Enter your email">
+        </div>
+        <div class="textBox">
+            <span class="field">Message</span>
+            <textarea required type="text" name="message" #messageField placeholder="Enter your Message"></textarea>
+        </div>
+
+        <div class="btnBox">
+            <button #sendBtn>Send</button>
+        </div>
+
     </form>
 </div>

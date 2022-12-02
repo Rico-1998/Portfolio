@@ -1,6 +1,6 @@
 .skillContainer {
     color: white;
-    padding: 100px 7% 100px 7%;
+    padding: 100px 10% 100px 10%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,12 @@
             padding: 0 25px;
         }
 
+        @media(max-width:325px) {
+            h2 {
+                padding: 0 10px;
+            }
+        }
+
     }
 
     .boxOfSkills {
@@ -32,6 +38,24 @@
             grid-template-columns: 0px repeat(3, 0) 0px;
             grid-column-gap: 150px;
             justify-content: center;
+
+            @media(max-width: 875px) {
+                grid-column-gap: 115px;
+            }
+
+            @media(max-width: 685px) {
+                grid-template-columns: 0px repeat(2, 0) 0px;
+            }
+
+            @media(max-width: 685px) {
+                grid-template-columns: 0px repeat(1, 0) 0px;
+            }
+
+            @media(max-width: 400px) {
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 50px;
+            }
+
 
             div {
                 display: flex;

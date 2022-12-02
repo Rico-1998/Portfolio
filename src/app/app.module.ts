@@ -13,6 +13,10 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { ImprintComponent } from './imprint/imprint.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     StartScreenComponent,
     ProjectsComponent,
     ContactComponent,
+    ImprintComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     NgxTypedJsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

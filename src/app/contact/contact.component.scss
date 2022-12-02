@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 100px 7% 100px 7%;
 
     .headlineDescription {
         display: flex;
@@ -17,10 +18,103 @@
         span {
             font-size: 18px;
         }
+
+        a {
+            color: #ae2a6c;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @media(max-width:675px) {
+            span {
+                text-align: center;
+            }
+        }
+
+        @media(max-width:675px) {
+            h2 {
+                font-size: 40px;
+            }
+        }
     }
 
     .contactForm {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        padding: 50px 0 0 0;
+
+        .inputBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            margin-top: 15px;
+
+            input {
+                height: 40px;
+                font-family: Roboto, "Helvetica Neue", sans-serif;
+                width: 80%;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding-left: 10px;
+                color: white;
+                font-size: 16px;
+                outline: none;
+                border-radius: 8px;
+            }
+        }
+
+        .field {
+            width: 80%;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .textBox {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            margin-top: 15px;
+            align-items: center;
+
+            textarea {
+                font-size: 16px;
+                width: 80%;
+                color: white;
+                border-radius: 8px;
+                height: 180px;
+                resize: none;
+                font-family: Roboto, "Helvetica Neue", sans-serif;
+                margin-bottom: 50px;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px 0 0 10px;
+                outline: none;
+            }
+        }
+
+
+        .btnBox {
+            display: flex;
+            justify-content: center;
+
+            button {
+                height: 50px;
+                width: 125px;
+                color: white;
+                font-size: 20px;
+                border-radius: 5px;
+                border: 1px solid #ae2a6c;
+                background-color: rgba(0, 0, 0, 0.5);
+
+                &:hover {
+                    background-color: #ae2a6c;
+                    transition: 225ms ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,17 @@
+:host {
+    width: 100%;
+}
+
 .skillContainer {
     color: white;
-    padding: 100px 10% 100px 10%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media(max-width: 700px) {
+        margin-top: 200px;
+    }
 
     .headline {
         display: flex;
@@ -18,6 +25,12 @@
             background-image: radial-gradient(ellipse, hsl(230deg, 100%, 15%) 0%, hsl(231deg, 90%, 1%) 300%);
             position: relative;
             padding: 0 25px;
+            font-weight: 900;
+
+            @media(max-width: 375px) {
+                font-size: 45px;
+                padding: 0 12px;
+            }
         }
 
         @media(max-width:325px) {
@@ -31,6 +44,7 @@
     .boxOfSkills {
         border: 3px solid white;
         padding: 75px;
+        background-image: radial-gradient(ellipse farthest-corner at center top, hsl(230deg, 100%, 15%) 0%, hsl(231deg, 90%, 1%) 100%);
 
         .gridBox {
             display: grid;
@@ -38,6 +52,10 @@
             grid-template-columns: 0px repeat(3, 0) 0px;
             grid-column-gap: 150px;
             justify-content: center;
+
+            @media(min-width: 1250px) {
+                grid-column-gap: 200px;
+            }
 
             @media(max-width: 875px) {
                 grid-column-gap: 115px;
@@ -61,6 +79,12 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                @media(min-width: 1250px) {
+                    img {
+                        height: 85px;
+                    }
+                }
             }
 
             div span {

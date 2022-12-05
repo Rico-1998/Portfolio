@@ -10,6 +10,10 @@
         justify-content: space-between;
         align-items: center;
 
+        @media(max-width:375px) {
+            width: 275px;
+        }
+
         img {
             height: 50px;
             width: 50px;

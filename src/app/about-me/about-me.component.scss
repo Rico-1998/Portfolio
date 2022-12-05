@@ -1,6 +1,4 @@
 .profileContainer {
-    height: 100vh;
-    padding: 100px 10% 100px 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,32 +6,28 @@
     h1 {
         letter-spacing: 1px;
         font-size: 50px;
+        font-weight: 700;
         color: white;
     }
-
-    @media(max-width: 1185px) {
-        height: unset;
-        // padding: 100px 7% 0 7%;
-    }
-
 }
 
 .mainBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 100px;
 
-    @media(max-width: 1185px) {
+    @media(max-width: 1450px) {
         flex-direction: column-reverse;
     }
 }
 
 .circle {
-    border: 6px solid #930f50;
+    border: 6px solid #0006ffb3;
     border-radius: 100%;
     display: flex;
     background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
-    filter: drop-shadow(2px 4px 20px #930f50);
+    filter: drop-shadow(2px 4px 20px #0006ffb3);
 
     img {
         color: rgb(118, 103, 103);
@@ -41,6 +35,13 @@
         height: 400px;
         object-fit: contain;
         border-radius: 100%;
+    }
+
+    @media(min-width: 1450px) {
+        img {
+            width: 450px;
+            height: 450px;
+        }
     }
 
     @media(max-width: 450px) {
@@ -61,7 +62,6 @@
 
 .descriptionContainer {
     min-width: 250px;
-    max-width: 600px;
     color: white;
     font-size: 20px;
     letter-spacing: 1px;
@@ -69,10 +69,10 @@
     h1 {
         font-size: 50px;
         margin-bottom: 50px;
-        color: rgba($color: #930f50, $alpha: 1.0);
+        color: rgba($color: #0006ffb3, $alpha: 1.0);
     }
 
-    @media(max-width:1185px) {
+    @media(max-width:1450px) {
         margin-top: 50px;
 
         h1 {

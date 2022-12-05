@@ -9,7 +9,7 @@ nav {
     position: fixed;
     top: 0;
     font-size: 23px;
-    box-shadow: 5px 5px 15px 5px #930f50;
+    box-shadow: 5px 5px 15px 5px #0006ffb3;
     background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
     z-index: 3;
 
@@ -53,6 +53,7 @@ nav {
         color: rgba($color: #ffffff, $alpha: 0.7);
         text-decoration: none;
         padding-right: 20px;
+        // padding-right: 20px;
 
         &:hover {
             color: white;

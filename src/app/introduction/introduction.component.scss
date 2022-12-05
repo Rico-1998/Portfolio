@@ -1,19 +1,26 @@
 .presentationBox {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: url("../../assets/img/cyber-background.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    .welcome {
+        font-size: 70px;
+        color: white;
+        margin-bottom: 100px;
+    }
 
 
     h1 {
         color: white;
         font-size: 50px;
-        margin-bottom: 30px;
+        margin-bottom: 75px;
     }
 
     @media(max-width: 600px) {
@@ -33,7 +40,8 @@
 
 .jobName {
     font-size: 50px;
-    color: #930f50;
+    color: rgb(255 255 255 / 70%);
+    text-shadow: 1px 1px 2px #0025ff, 0 0 1em blue, 0 0 0.2em blue;
 
     @media(max-width: 600px) {
         font-size: 35px;
@@ -61,6 +69,7 @@
 
 .container a {
     position: relative;
+    font-weight: 900;
     width: 160px;
     height: 60px;
     display: inline-block;

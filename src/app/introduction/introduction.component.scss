@@ -14,12 +14,14 @@
         font-size: 70px;
         color: white;
         margin-bottom: 100px;
+        font-family: 'Montserrat';
     }
 
 
     h1 {
         color: white;
         font-size: 50px;
+        font-family: 'Montserrat';
         margin-bottom: 75px;
     }
 
@@ -40,8 +42,10 @@
 
 .jobName {
     font-size: 50px;
+    font-family: 'Montserrat';
     color: rgb(255 255 255 / 70%);
-    text-shadow: 1px 1px 2px #0025ff, 0 0 1em blue, 0 0 0.2em blue;
+    text-shadow: 1px 1px 2px, 0 0 1em #00ffbb, 0 0 0.2em;
+
 
     @media(max-width: 600px) {
         font-size: 35px;

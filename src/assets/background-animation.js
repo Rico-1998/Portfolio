@@ -199,16 +199,19 @@ function animate() {
         };
 
         Build.prototype.upd = function () {
-            cam.obj.x += (this.toX - cam.obj.x) * 0.05;
-            cam.obj.y += (this.toY - cam.obj.y) * 0.05;
+            cam.obj.x += (this.toX - cam.obj.x) * 0.002;
+            cam.obj.y += (this.toY - cam.obj.y) * 0.002;
+            // faktor war 0,05
         };
 
         Build.prototype.draw = function () {
             this.$.clearRect(0, 0, this.canvas.width, this.canvas.height);
             cam.upd();
-            this.rotObj.x += 0.1;
-            this.rotObj.y += 0.1;
-            this.rotObj.z += 0.1;
+            this.rotObj.x += 0.002;
+            this.rotObj.y += 0.002;
+            this.rotObj.z += 0.002;
+            // faktor war 0,05
+
 
             for (var i = 0; i < this.varr.length; i++) {
                 for (var val in this.calc[i]) {
@@ -218,11 +221,11 @@ function animate() {
                     }
                 }
 
-                this.varr[i].transIn.pos = {
-                    x: this.diff * Math.cos(this.calc[i].x * Math.PI / 180),
-                    y: this.diff * Math.sin(this.calc[i].y * Math.PI / 180),
-                    z: this.diff * Math.sin(this.calc[i].z * Math.PI / 180)
-                };
+                // this.varr[i].transIn.pos = {
+                //     x: this.diff * Math.cos(this.calc[i].x * Math.PI / 180),
+                //     y: this.diff * Math.sin(this.calc[i].y * Math.PI / 180),
+                //     z: this.diff * Math.sin(this.calc[i].z * Math.PI / 180)
+                // };
                 this.varr[i].transIn.rot = this.rotObj;
                 this.varr[i].transIn.sz = this.objSz;
                 this.varr[i].vupd();
@@ -266,17 +269,17 @@ function animate() {
             //     this.toX = (e.touches[0].clientX - this.canvas.width / 2) * -0.8;
             //     this.toY = (e.touches[0].clientY - this.canvas.height / 2) * 0.8;
             // }.bind(this));
-            window.addEventListener('mousedown', function (e) {
-                for (var i = 0; i < 100; i++) {
-                    this.add();
-                }
-            }.bind(this));
-            window.addEventListener('touchstart', function (e) {
-                e.preventDefault();
-                for (var i = 0; i < 100; i++) {
-                    this.add();
-                }
-            }.bind(this));
+            // window.addEventListener('mousedown', function (e) {
+            //     for (var i = 0; i < 100; i++) {
+            //         this.add();
+            //     }
+            // }.bind(this));
+            // window.addEventListener('touchstart', function (e) {
+            //     e.preventDefault();
+            //     for (var i = 0; i < 100; i++) {
+            //         this.add();
+            //     }
+            // }.bind(this));
         };
         var app = new Build();
         app.run();

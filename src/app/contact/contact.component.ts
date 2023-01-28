@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,33 +8,44 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class ContactComponent {
   @ViewChild('myForm') myForm: ElementRef;
-  @ViewChild('nameField') nameField: ElementRef;
-  @ViewChild('messageField') messageField: ElementRef;
+  @ViewChild('name') name: ElementRef;
+  @ViewChild('email') email: ElementRef;
+  @ViewChild('message') message: ElementRef;
   @ViewChild('sendBtn') sendBtn: ElementRef;
+  public contactForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.contactForm = this.formBuilder.group({
+      name: ['', [Validators.required,], []],
+      email: ['', [Validators.required, Validators.email], []],
+      message: ['', [Validators.required], []],
+    });
+  }
+
+  playSendingAudio() {
+    let audio = new Audio();
+    audio.src = "assets/audio/swish.mp3";
+    audio.load();
+    audio.play();
+  }
+
 
   async sendMail() {
-    // https://rico-denkewitz.developerakademie.net/send_mail
-    let nameField = this.nameField.nativeElement;
-    let messageField = this.messageField.nativeElement;
-    let sendBtn = this.sendBtn.nativeElement;
-    nameField.disabled = true;
-    messageField.disabled = true;
-    sendBtn.disabled = true;
-    //animation anzeigen
+    this.setInputFields(true);
     let fd = new FormData();
-    fd.append('name', nameField.value);
-    fd.append('message', messageField.value);
-    //senden
-    await fetch('https://rico-denkewitz.developerakademie.net/send_mail/send_mail.php',
-      {
-        method: 'POST',
-        body: fd
-      }
-    );
+    fd.append('name', this.name.nativeElement.value);
+    fd.append('email', this.email.nativeElement.value);
+    fd.append('message', this.message.nativeElement.value);
+    await fetch('https://rico-denkewitz.developerakademie.net/send_mail/send_mail.php', { method: 'POST', body: fd });
+    this.playSendingAudio();
+    this.setInputFields(false);
+    this.contactForm.reset();
+  }
 
-    //text anzeigen senden beendet
-    nameField.disabled = false;
-    messageField.disabled = false;
-    sendBtn.disabled = false;
+
+  setInputFields(Boolean) {
+    this.name.nativeElement.disabled = Boolean;
+    this.email.nativeElement.disabled = Boolean;
+    this.message.nativeElement.disabled = Boolean;
   }
 }

@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  showMenu() {
+  toggleMenu() {
     this.open = !this.open;
   }
 

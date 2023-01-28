@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-declare function animate(): any;
-
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
@@ -12,7 +10,6 @@ export class AboutMeComponent implements OnInit {
   descriptions: Array<any> = ['Rico Denkewitz', '24', 'Ennepetal , Germany'];
 
   ngOnInit() {
-    animate();
   }
 
 }

@@ -5,23 +5,32 @@
                 href="mailto: rico.dg40@gmail.com">rico.dg40@gmail.com</a> </span>
     </div>
 
-    <form (submit)="sendMail()" #myForm ngNativeValidate class="contactForm" data-aos="fade-up-right"
-        data-aos-duration="1000">
+    <form (submit)="sendMail()" [formGroup]="contactForm" class="contactForm" data-aos="fade-up-right"
+        data-aos-duration="1000" #myForm>
         <div class="inputBox">
             <span class="field">Name</span>
-            <input required type="text" name="name" #nameField placeholder="Enter your name">
+            <input type="text" formControlName="name" #name placeholder="Enter your name" [class.invalid-filled-input]=" contactForm.controls['name'].dirty ||
+                contactForm.controls['name'].touched" [class.valid-filled-input]=" name.value.length > 2">
         </div>
         <div class="inputBox">
             <span class="field">Email</span>
-            <input required type="email" name="email" #nameField placeholder="Enter your email">
+            <input type="email" name="email" formControlName="email" #email placeholder="Enter your email"
+                [class.invalid-filled-input]="
+            email.value.length > 0 && !contactForm.controls['email'].valid || contactForm.controls['email'].dirty ||
+            contactForm.controls['email'].touched" [class.valid-filled-input]="contactForm.controls['email'].valid">
         </div>
         <div class="textBox">
             <span class="field">Message</span>
-            <textarea required type="text" name="message" #messageField placeholder="Enter your Message"></textarea>
+            <textarea type="text" name="message" formControlName="message" #message placeholder="Enter your Message"
+                [class.invalid-filled-input]=" contactForm.controls['message'].dirty ||
+                contactForm.controls['message'].touched"
+                [class.valid-filled-input]=" message.value.length > 2"></textarea>
         </div>
 
         <div class="btnBox">
-            <button #sendBtn>Send</button>
+            <button #sendBtn type="submit" [disabled]="
+            !(contactForm.valid && (contactForm.dirty || contactForm.touched))
+          ">Send</button>
         </div>
 
     </form>

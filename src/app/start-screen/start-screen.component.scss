@@ -1,13 +1,11 @@
-canvas {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
-
 .space {
     padding: 100px 10% 100px 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+:host {
+    width: 100vw;
+    display: block;
 }

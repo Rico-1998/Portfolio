@@ -1,13 +1,15 @@
 :host {
+    padding-top: 100px;
     width: 100%;
-    font-family: 'Montserrat' !important;
+    scroll-margin-top: 75px;
 }
 
 .contactContainer {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-margin-top: 75px;
+
 
     .headlineDescription {
         display: flex;
@@ -18,12 +20,68 @@
 
         h2 {
             font-size: 50px;
-            text-shadow: 0px 0px 0px, 0 0 14px #00ffbb, 0 0 0px;
-            font-family: 'Montserrat' !important;
+            font-weight: 900;
+            font-family: 'Open Sans';
+            transform: scaleX(1);
+            transition: all 225ms ease-in-out;
+            white-space: nowrap;
+
+
+            &::after {
+                content: "Contact me";
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                width: 100%;
+                right: 0;
+                color: rgba(77, 77, 77, 0.5);
+                transform: translateY(-0.4em) translate(-1.7em);
+                font-size: calc(20px + 5vw);
+                white-space: nowrap;
+
+                @media(max-width:1750px) {
+                    transform: translateY(-0.4em) translate(-1.5em);
+                }
+
+                @media(max-width:1450px) {
+                    transform: translateY(-0.4em) translate(-1.2em);
+                }
+
+                @media(max-width:1250px) {
+                    transform: translateY(-0.4em) translate(-0.9em);
+                }
+
+                @media(max-width:925px) {
+                    transform: translateY(-0.4em) translate(-0.5em);
+                }
+
+                @media(max-width:750px) {
+                    transform: translateY(-0.4em) translate(-0.3em);
+                }
+
+                @media(max-width:640px) {
+                    transform: translateY(-0.4em) translate(-0.6em);
+                }
+
+                @media(max-width:540px) {
+                    transform: translateY(-0.4em) translate(-0.0em);
+                }
+
+                @media(max-width:350px) {
+                    transform: translateY(-0.4em) translate(0.3em);
+                }
+            }
+
         }
 
         span {
-            font-size: 20px;
+            font-size: 23px;
+            line-height: 30px;
+            text-align: center;
+
+            @media(max-width: 400px) {
+                font-size: 20px;
+            }
         }
 
 
@@ -47,6 +105,17 @@
                 font-size: 40px;
             }
         }
+
+
+        @media(max-width: 400px) {
+            font-size: 35px;
+        }
+
+        @media(max-width: 350px) {
+            span {
+                font-size: 16px;
+            }
+        }
     }
 
     .contactForm {
@@ -54,6 +123,16 @@
         display: flex;
         flex-direction: column;
         padding: 50px 0 0 0;
+
+        .invalid-filled-input {
+            border: 2px solid red;
+            color: red;
+        }
+
+        .valid-filled-input {
+            border: 2px solid #00ffbb;
+            color: #00ffbb;
+        }
 
         .inputBox {
             display: flex;
@@ -63,8 +142,8 @@
             margin-top: 30px;
 
             input {
+                font-family: 'Montserrat' !important;
                 height: 40px;
-                font-family: 'Montserrat';
                 width: 80%;
                 background-color: rgba(0, 0, 0, 0.5);
                 padding-left: 10px;
@@ -88,6 +167,7 @@
             margin-top: 25px;
             align-items: center;
 
+
             textarea {
                 font-size: 16px;
                 width: 80%;
@@ -95,7 +175,7 @@
                 border-radius: 8px;
                 height: 180px;
                 resize: none;
-                font-family: 'Montserrat';
+                font-family: 'Montserrat' !important;
                 margin-bottom: 50px;
                 background-color: rgba(0, 0, 0, 0.5);
                 padding: 10px 0 0 10px;
@@ -109,20 +189,24 @@
             justify-content: center;
 
             button {
-                font-family: 'Montserrat' !important;
                 height: 50px;
                 width: 125px;
                 color: rgb(255 255 255 / 70%);
                 font-size: 20px;
                 border-radius: 5px;
-                border: 1px solid #0006ffb3;
+                border: 1px solid rgb(0, 255, 187);
                 background-color: rgba(0, 0, 0, 0.5);
 
                 &:hover {
                     color: white;
-                    background-color: #0006ffb3;
+                    background-color: rgba($color: #00ffbb, $alpha: .8);
                     transition: 225ms ease-in-out;
                     cursor: pointer;
+                }
+
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
                 }
             }
         }

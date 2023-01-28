@@ -33,7 +33,6 @@
               "./node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "./src/assets/background-animation.js",
               "./node_modules/aos/dist/aos.js"
             ]
           },
@@ -47,8 +46,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5kb",
+                  "maximumError": "8kb"
                 }
               ],
               "fileReplacements": [

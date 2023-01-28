@@ -19,7 +19,7 @@
             width: 50px;
 
             &:hover {
-                filter: brightness(1.35);
+                filter: brightness(0) saturate(100%) invert(88%) sepia(19%) saturate(5369%) hue-rotate(98deg) brightness(108%) contrast(101%);
             }
         }
 

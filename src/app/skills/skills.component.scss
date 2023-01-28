@@ -8,10 +8,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 100px;
+    text-align: center;
+    scroll-margin-top: 75px;
 
-    @media(max-width: 700px) {
+    @media(max-width:715px) {
+        scroll-margin-top: 125px;
         margin-top: 200px;
+    }
+
+    @media(max-width: 415px) {
+        scroll-margin-top: 300px;
     }
 
     .headline {
@@ -19,20 +25,46 @@
         justify-content: center;
 
         h2 {
+            font-family: 'Open Sans';
             display: flex;
             justify-content: center;
             font-size: 50px;
             color: #ffffff;
-            text-shadow: 0px 0px 0px, 0 0 14px #00ffbb, 0 0 0px;
-            font-family: 'Montserrat' !important;
             margin-bottom: -15px;
-            background-image: radial-gradient(ellipse, hsl(230deg, 100%, 15%) 0%, hsl(231deg, 90%, 1%) 300%);
+            background-color: rgb(0 1 38);
             position: relative;
             padding: 0 25px;
             font-weight: 900;
+            transform: scaleX(1);
+            transition: all 225ms ease-in-out;
 
-            @media(max-width: 375px) {
-                font-size: 45px;
+            &::after {
+                content: "My Skills";
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                width: 100%;
+                right: 0;
+                color: rgba(77, 77, 77, 0.5);
+                transform: translateY(-0.4em) translate(-1.0em);
+                font-size: calc(20px + 5vw);
+                white-space: nowrap;
+
+                @media(max-width: 1350px) {
+                    transform: translateY(-0.4em) translate(-0.6em);
+                }
+
+                @media(max-width: 1150px) {
+                    transform: translateY(-0.4em) translate(-0.4em);
+                }
+
+                @media(max-width: 1150px) {
+                    transform: translateY(-0.4em) translate(-0.0em);
+                }
+            }
+
+            @media(max-width: 400px) {
+                font-size: 35px;
                 padding: 0 12px;
             }
         }
@@ -46,23 +78,38 @@
     }
 
     .boxOfSkills {
-        border: 3px solid white;
-        padding: 75px;
-        background-image: radial-gradient(ellipse farthest-corner at center top, hsl(230deg, 100%, 15%) 0%, hsl(231deg, 90%, 1%) 100%);
+        border: 3px solid #00ffbb;
+        border-radius: 15px;
+        padding: 125px;
+        // padding: 75px;
+
+        @media(max-width: 1500px) {
+            padding: 75px;
+        }
+
+        @media(max-width: 500px) {
+            padding: 60px;
+        }
+
+        @media(max-width: 300px) {
+            padding: 40px;
+        }
+
 
         .gridBox {
             display: grid;
-            grid-row-gap: 50px;
+            grid-row-gap: 150px;
             grid-template-columns: 0px repeat(3, 0) 0px;
             grid-column-gap: 300px;
             justify-content: center;
 
-            @media(max-width: 1750px) {
-                grid-column-gap: 250px;
-            }
 
             @media(max-width: 1750px) {
                 grid-column-gap: 200px;
+            }
+
+            @media(max-width: 1500px) {
+                grid-row-gap: 50px;
             }
 
             @media(max-width: 1225px) {
@@ -78,13 +125,18 @@
             }
 
             @media(max-width: 685px) {
-                grid-template-columns: 0px repeat(1, 0) 0px;
+                // grid-template-columns: 0px repeat(1, 0) 0px;
+                grid-template-columns: 1fr 1fr;
             }
 
-            @media(max-width: 400px) {
-                grid-template-columns: 1fr 1fr;
+            @media(max-width: 475px) {
                 grid-column-gap: 50px;
             }
+
+            @media(max-width: 350px) {
+                grid-column-gap: 20px;
+            }
+
 
 
             div {
@@ -92,11 +144,32 @@
                 flex-direction: column;
                 align-items: center;
 
+                img {
+                    transition: all 225ms ease-in-out;
+
+                    &:hover {
+                        filter: brightness(0) saturate(100%) invert(88%) sepia(19%) saturate(5369%) hue-rotate(98deg) brightness(108%) contrast(101%);
+                    }
+                }
+
                 @media(min-width: 1250px) {
                     img {
                         height: 85px;
                     }
                 }
+
+                @media(max-width: 400px) {
+                    img {
+                        height: 45px;
+                    }
+                }
+
+                @media(max-width: 320px) {
+                    img {
+                        height: 30px;
+                    }
+                }
+
             }
 
             div span {
@@ -105,6 +178,15 @@
                 display: flex;
                 justify-content: center;
                 font-size: 20px;
+
+                @media(max-width: 480px) {
+                    font-size: 18px;
+                }
+
+                @media(max-width: 350px) {
+                    font-size: 16px;
+                }
+
             }
         }
     }

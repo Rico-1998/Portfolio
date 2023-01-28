@@ -1,67 +1,106 @@
 :host {
-    @media(min-width: 1201px) {
-        width: 100%;
+    width: 100%;
+    scroll-margin-top: 75px;
+
+    @media(max-width: 825px) {
+        scroll-margin-top: 100px;
     }
+
+    @media(max-width: 550px) {
+        scroll-margin-top: 175px;
+    }
+
 }
 
 .profileContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
+
 
     h1 {
         letter-spacing: 1px;
         font-size: 50px;
-        font-weight: 700;
+        font-weight: 900;
         color: white;
-        text-shadow: 0px 0px 0px, 0 0 14px #00ffbb, 0 0 0px;
+        transform: scaleX(1);
+        transition: all 225ms ease-in-out;
+        font-family: 'Open Sans';
+        text-align: center;
+        margin-bottom: 30px;
+
+        &::after {
+            content: "About me";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            width: 100%;
+            right: 0;
+            color: rgba(77, 77, 77, 0.5);
+            transform: translateY(-0.4em);
+            font-size: calc(20px + 5vw);
+        }
+
+        @media(max-width: 400px) {
+            font-size: 35px;
+        }
     }
+
 }
 
 .mainBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    gap: 10%;
 
-    @media(max-width: 1200px) {
-        flex-direction: column-reverse;
+    @media(max-width: 1300px) {
+        gap: 5%;
+    }
+
+    @media(max-width: 825px) {
+        flex-direction: column;
+    }
+
+    @media(max-width: 350px) {
+        gap: 2%;
     }
 }
 
 .circle {
-    border: 6px solid #0006ffb3;
-    border-radius: 100%;
+    border-radius: 20px;
     display: flex;
     background-image: radial-gradient(ellipse farthest-corner at center top, hsla(230, 100%, 15%, 1) 0%, hsla(231, 90%, 1%, 1) 100%);
-    filter: drop-shadow(2px 4px 20px #0006ffb3);
+    box-shadow: 0px 6px 15px 5px rgba(0, 255, 187, 0.3);
+    margin-top: 75px;
+
 
     img {
-        color: rgb(118, 103, 103);
         width: 400px;
-        height: 400px;
-        object-fit: contain;
-        border-radius: 100%;
+        object-fit: cover;
+        border-radius: 20px;
     }
 
-    @media(min-width: 1450px) {
+    @media(max-width: 1300px) {
         img {
-            width: 450px;
-            height: 450px;
+            width: 300px;
         }
+    }
+
+    @media(max-width: 825px) {
+        margin-top: 25px;
     }
 
     @media(max-width: 450px) {
         img {
-            width: 300px;
-            height: 300px;
+            height: 330px;
         }
     }
 
     @media(max-width: 325px) {
         img {
             width: 250px;
-            height: 250px;
         }
     }
 
@@ -70,56 +109,44 @@
 .descriptionContainer {
     min-width: 250px;
     color: white;
-    font-size: 20px;
-    letter-spacing: 2px;
-
-    @media(min-width: 1201px) {
-        max-width: 500px;
-    }
-
-    @media(min-width: 1500px) {
-        max-width: 600px;
-    }
-
-    @media(min-width: 1700px) {
-        max-width: 750px;
-    }
-
-    h1 {
-        font-size: 50px;
-        font-family: 'Montserrat' !important;
-        margin-bottom: 50px;
-        color: #ffffff;
-    }
-
-    @media(max-width:1450px) {
-        margin-top: 50px;
-
-        h1 {
-            text-align: center;
-        }
-    }
-
-    @media(max-width:400px) {
-        h1 {
-            font-size: 40px;
-        }
-    }
+    max-width: 800px;
+    height: 100%;
 }
 
 
 .speechbubble {
     background-color: #26272bcc;
     color: white;
-    font-size: 20px;
-    line-height: 1.75;
-    padding: 15px 25px;
+    font-size: 25px;
+    line-height: 1.40;
+    padding: 15px 20px;
     cursor: default;
     border-radius: 10px;
+    text-align: left;
 
-    //  Border and arrow left
+    p {
+        margin: unset;
+    }
+
+    @media(max-width: 1600px) {
+        font-size: 20px;
+    }
+
+    @media(max-width: 1300px) {
+        font-size: 18px;
+    }
+
+    @media(max-width: 950px) {
+        font-size: 16px;
+    }
+
+
+    @media(max-width: 825px) {
+        line-height: 1.2;
+    }
+
     &:nth-child(2n) {
-        border-left: 5px solid;
+        border-left: 5px solid #00ffbb;
     }
 
     &:nth-child(2n):after {
@@ -136,7 +163,6 @@
         width: 0;
     }
 
-    //  Border and arrow right
     &:nth-child(2n+1) {
         border-right: 5px solid;
     }

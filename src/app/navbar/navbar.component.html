@@ -4,20 +4,20 @@
     </div>
 
     <div class="links">
-        <a href="#">Home</a>
         <a href="#aboutme">About me</a>
+        <a href="#skills">My Skills</a>
         <a href="#projects">Portfolio</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <div (click)="showMenu()" class="menu hide">
+    <div (click)="toggleMenu()" class="menu hide">
         <mat-icon aria-hidden="false" fontIcon="menu"></mat-icon>
     </div>
 
-    <div *ngIf="open" class="responsiveMenu">
-        <a href="#">Home</a>
-        <a href="#aboutme">About me</a>
-        <a href="#projects">Portfolio</a>
-        <a href="#contact">Contact</a>
+    <div *ngIf="open" class="responsiveMenu" data-aos="fade-up-left">
+        <a href="#aboutme" (click)="toggleMenu()">About me</a>
+        <a href="#skills" (click)="toggleMenu()">My Skills</a>
+        <a href="#projects" (click)="toggleMenu()">Portfolio</a>
+        <a href="#contact" (click)="toggleMenu()">Contact</a>
     </div>
 </nav>

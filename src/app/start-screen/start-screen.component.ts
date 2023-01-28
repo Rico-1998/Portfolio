@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-declare function animate(): any;
-
 
 @Component({
   selector: 'app-start-screen',
@@ -12,6 +10,5 @@ declare function animate(): any;
 
 export class StartScreenComponent implements OnInit {
   ngOnInit() {
-    animate();
   }
 }
